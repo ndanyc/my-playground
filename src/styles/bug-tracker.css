@@ -1,0 +1,9 @@
+body {
+    background-image: url('../assets/images/bg_noise.png');
+    background-color: #0c1929;
+}
+
+h1 {
+    color: aliceblue;
+    text-align: center;
+}
