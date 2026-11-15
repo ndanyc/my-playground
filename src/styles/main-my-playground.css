@@ -24,6 +24,7 @@ header {
   background: rgba(5, 5, 5, 0.25);
   backdrop-filter: blur(5px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 100;
 }
 
 header h1 {
@@ -54,4 +55,70 @@ main {
   max-width: 900px;
   margin: 0 auto;
   padding: 140px 24px 60px;
+}
+
+.about-content {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.photo {
+  flex-shrink: 0;
+}
+
+.photo img {
+  width: 250x;
+  height: 250px;
+  border-radius: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  box-shadow: -15px 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(12px); 
+  border: 1px solid rgba(255, 255, 255, 0.25); 
+  border-radius: 20px; 
+  padding: 30px; 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); 
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px; 
+  align-items: stretch; 
+}
+
+.card {
+  flex: 1; 
+  min-width: 300px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+}
+
+.button {
+  display: inline-block; 
+  margin-top: auto;  
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  color: #833AB4; 
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none; 
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: inherit; 
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  opacity: 1; 
 }
