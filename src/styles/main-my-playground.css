@@ -1,48 +1,57 @@
-:root {
-  --bg-dark: #0d0f12;
-  --text-main: #eaeaea;
-  --text-muted: #9a9a9a;
-}
-
-*, *::before, *::after {
+* {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding: 2rem 1.5rem;
+  padding: 0;
+  background: #833AB4;
+  background: linear-gradient(90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%);
   min-height: 100vh;
-
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: var(--bg-dark);
-  color: var(--text-main);
-  line-height: 1.7;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #fff;
 }
 
-header,
-main,
-footer {
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 800px;
-}
-
-main {
-  flex: 1;
+  padding: 20px 40px;
+  background: rgba(5, 5, 5, 0.25);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 header h1 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  text-align: center;
+  color: whitesmoke
 }
 
-header p {
-  font-size: 1rem;
-  color: var(--text-muted);
-  line-height: 1.8;
+header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 1px;
+}
+
+header a:hover {
+  opacity: 0.6;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 140px 24px 60px;
 }
