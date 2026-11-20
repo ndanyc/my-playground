@@ -1,3 +1,6 @@
+/* =========================================
+   БАЗА И ГРАДИЕНТ
+   ========================================= */
 * {
   box-sizing: border-box;
 }
@@ -13,63 +16,131 @@ body {
   min-height: 100vh;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color: #fff;
+  background-attachment: fixed; 
 }
 
+/* =========================================
+   ШАПКА
+   ========================================= */
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 40px;
-  background: rgba(5, 5, 5, 0.25);
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   z-index: 100;
 }
 
-header ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 16px;
+.header-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-header a {
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  padding-bottom: 1px;
+.header-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
-header a:hover {
-  opacity: 0.6;
+/* =========================================
+   КНОПКИ В ШАПКЕ
+   ========================================= */
+.nav-link {
+    color: #e6edf3;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 20px; 
+    border-radius: 8px; 
+    background: transparent;
+    border: 1px solid transparent; 
+    transition: all 0.2s ease;
 }
 
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3); 
+}
+
+.nav-link.active {
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    border-color: #ffffff; 
+}
+
+
+.nav-link.active:hover {
+    background: rgba(255, 255, 255, 0.15); 
+    border-color: #ffffff; 
+}
+/* =========================================
+   ОСНОВНОЙ КОНТЕНТ
+   ========================================= */
 main {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 140px 24px 60px;
+  padding: 120px 24px 60px;
 }
 
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* =========================================
+   ОБО МНЕ 
+   ========================================= */
 .about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr; 
+  gap: 30px;
+  align-items: start;
+}
+
+
+.about-left {
   display: flex;
-  gap: 50px;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.about-text p {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .photo {
   flex-shrink: 0;
+  width: 100%; 
+  max-width: 400px; 
+  margin: 0 auto; 
 }
 
 .photo img {
-  width: 250x;
-  height: 250px;
+  width: 100%; 
+  height: auto; 
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
   border-radius: 20px;
   border: 3px solid rgba(255, 255, 255, 0.5);
   box-shadow: -15px 15px 25px rgba(0, 0, 0, 0.4);
+  display: block;
 }
 
+/* =========================================
+   СТЕКЛЯННЫЕ КАРТОЧКИ
+   ========================================= */
 .glass-card {
   background: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(12px); 
@@ -79,20 +150,65 @@ main {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); 
 }
 
+/* =========================================
+   КОНТАКТЫ
+   ========================================= */
+.about-contacts h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.contact-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.contact-btn svg {
+    flex-shrink: 0;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.contact-btn:hover svg {
+    opacity: 1;
+}
+
+/* =========================================
+   ПЕСОЧНИЦА
+   ========================================= */
 .grid {
-  display: flex;
-  flex-wrap: wrap; 
-  gap: 20px; 
-  align-items: stretch; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .card {
-  flex: 1; 
-  min-width: 300px; 
   display: flex;
   flex-direction: column;
   align-items: center; 
   text-align: center;
+  height: 100%;
 }
 
 .button {
@@ -115,9 +231,24 @@ main {
 .button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-  opacity: 1; 
 }
 
 footer {
   text-align: center;
+  padding: 2rem;
+}
+
+/* =========================================
+   АДАПТИВНОСТЬ
+   ========================================= */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .photo {
+    order: -1;
+    max-width: 250px;
+    margin: 0 auto;
+  }
 }
