@@ -27,11 +27,6 @@ header {
   z-index: 100;
 }
 
-header h1 {
-  text-align: center;
-  color: whitesmoke
-}
-
 header ul {
   list-style: none;
   margin: 0;
